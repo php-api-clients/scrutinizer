@@ -1,0 +1,4 @@
+class: Meta
+properties:
+  pull_ips: array
+  hook_ips: array
