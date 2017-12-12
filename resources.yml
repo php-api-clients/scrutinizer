@@ -1,0 +1,8 @@
+yaml_location: yaml
+api_settings: ApiClients\Client\Scrutinizer\ApiSettings
+src:
+    path: src/Resource
+    namespace: ApiClients\Client\Scrutinizer\Resource
+tests:
+    path: tests/Resource
+    namespace: ApiClients\Tests\Client\Scrutinizer\Resource
