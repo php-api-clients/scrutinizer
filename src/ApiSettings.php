@@ -48,9 +48,11 @@ final class ApiSettings
         $options = options_merge(self::TRANSPORT_OPTIONS, $suppliedOptions);
         $options[FoundationOptions::HYDRATOR_OPTIONS][HydratorOptions::NAMESPACE_SUFFIX] = $suffix;
 
-        $options[FoundationOptions::TRANSPORT_OPTIONS][TransportOptions::DEFAULT_REQUEST_OPTIONS][AccessTokenMiddleware::class] = [
+        $dro = $options[FoundationOptions::TRANSPORT_OPTIONS][TransportOptions::DEFAULT_REQUEST_OPTIONS];
+        $dro[AccessTokenMiddleware::class] = [
             AccessTokenMiddleware::OPTION_ACCESS_TOKEN => $token,
         ];
+        $options[FoundationOptions::TRANSPORT_OPTIONS][TransportOptions::DEFAULT_REQUEST_OPTIONS] = $dro;
 
         return $options;
     }

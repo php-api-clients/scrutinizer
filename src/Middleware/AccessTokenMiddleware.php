@@ -15,10 +15,9 @@ use function RingCentral\Psr7\parse_query;
 
 final class AccessTokenMiddleware implements MiddlewareInterface
 {
-    const OPTION_ACCESS_TOKEN = 'ACCESS_TOKEN';
-
     use PostTrait;
     use ErrorTrait;
+    const OPTION_ACCESS_TOKEN = 'ACCESS_TOKEN';
 
     public function pre(
         RequestInterface $request,
@@ -32,6 +31,7 @@ final class AccessTokenMiddleware implements MiddlewareInterface
         $query = parse_query($request->getUri()->getQuery());
         $query['access_token'] = $options[self::class][self::OPTION_ACCESS_TOKEN];
         $request = $request->withUri($request->getUri()->withQuery(build_query($query)));
+
         return resolve($request);
     }
 }
