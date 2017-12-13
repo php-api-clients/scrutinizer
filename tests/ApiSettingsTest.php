@@ -13,7 +13,7 @@ final class ApiSettingsTest extends TestCase
 {
     public function testGetOptions()
     {
-        $options = ApiSettings::getOptions([], 'Suffix');
+        $options = ApiSettings::getOptions('token', [], 'Suffix');
         self::assertTrue(isset($options[FoundationOptions::HYDRATOR_OPTIONS][HydratorOptions::NAMESPACE_SUFFIX]));
         self::assertSame('Suffix', $options[FoundationOptions::HYDRATOR_OPTIONS][HydratorOptions::NAMESPACE_SUFFIX]);
     }

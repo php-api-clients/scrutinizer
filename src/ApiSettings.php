@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Scrutinizer;
 
+use ApiClients\Client\Scrutinizer\Middleware\AccessTokenMiddleware;
 use ApiClients\Foundation\Hydrator\Options as HydratorOptions;
 use ApiClients\Foundation\Options as FoundationOptions;
 use ApiClients\Foundation\Transport\Options as TransportOptions;
@@ -31,6 +32,7 @@ final class ApiSettings
                 UserAgentMiddleware::class,
                 JsonDecodeMiddleware::class,
                 JsonEncodeMiddleware::class,
+                AccessTokenMiddleware::class,
             ],
             TransportOptions::DEFAULT_REQUEST_OPTIONS => [
                 UserAgentMiddleware::class => [
@@ -41,10 +43,14 @@ final class ApiSettings
         ],
     ];
 
-    public static function getOptions(array $suppliedOptions, string $suffix): array
+    public static function getOptions(string $token, array $suppliedOptions, string $suffix): array
     {
         $options = options_merge(self::TRANSPORT_OPTIONS, $suppliedOptions);
         $options[FoundationOptions::HYDRATOR_OPTIONS][HydratorOptions::NAMESPACE_SUFFIX] = $suffix;
+
+        $options[FoundationOptions::TRANSPORT_OPTIONS][TransportOptions::DEFAULT_REQUEST_OPTIONS][AccessTokenMiddleware::class] = [
+            AccessTokenMiddleware::OPTION_ACCESS_TOKEN => $token,
+        ];
 
         return $options;
     }
