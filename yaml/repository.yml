@@ -1,0 +1,10 @@
+class: Repository
+properties:
+  type: string
+  private: bool
+  default_branch: string
+  applications: array
+  development_report_settings: array
+  branch_settings: array
+  login: string
+  name: string

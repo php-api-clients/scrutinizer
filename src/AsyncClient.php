@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace ApiClients\Client\Scrutinizer;
 
 use ApiClients\Client\Scrutinizer\CommandBus\Command\MetaCommand;
+use ApiClients\Client\Scrutinizer\Github\AsyncClient as AsyncGithubClient;
+use ApiClients\Client\Scrutinizer\Github\AsyncClientInterface as AsyncGithubClientInterface;
 use ApiClients\Foundation\ClientInterface;
 use ApiClients\Foundation\Factory;
 use ApiClients\Foundation\Resource\ResourceInterface;
@@ -32,9 +34,9 @@ final class AsyncClient implements AsyncClientInterface
      * @param  array         $options
      * @return AsyncClient
      */
-    public static function create(LoopInterface $loop, array $options = []): self
+    public static function create(LoopInterface $loop, string $token, array $options = []): self
     {
-        $options = ApiSettings::getOptions($options, 'Async');
+        $options = ApiSettings::getOptions($token, $options, 'Async');
         $client = Factory::create($loop, $options);
 
         return new self($client);
@@ -63,5 +65,10 @@ final class AsyncClient implements AsyncClientInterface
     public function meta(): PromiseInterface
     {
         return $this->client->handle(new MetaCommand());
+    }
+
+    public function github(): AsyncGithubClientInterface
+    {
+        return new AsyncGithubClient($this->client);
     }
 }
