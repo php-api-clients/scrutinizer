@@ -52,7 +52,7 @@ final class AddRepositoryHandler
                 ])
             )
         )->then(function ($repository) {
-            return $this->hydrator->hydrate(RepositoryInterface::HYDRATE_CLASS, $repository->getBody()->getJson());
+            return $this->hydrator->hydrate(RepositoryInterface::HYDRATE_CLASS, $repository->getBody()->getParsedContents());
         });
     }
 }
