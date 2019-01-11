@@ -1924,16 +1924,16 @@
         },
         {
             "name": "react/event-loop",
-            "version": "v0.5.3",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/event-loop.git",
-                "reference": "228178a947de1f7cd9296d691878569628288c6f"
+                "reference": "0266aff7aa7b0613b1f38a723e14a0ebc55cfca3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/228178a947de1f7cd9296d691878569628288c6f",
-                "reference": "228178a947de1f7cd9296d691878569628288c6f",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/0266aff7aa7b0613b1f38a723e14a0ebc55cfca3",
+                "reference": "0266aff7aa7b0613b1f38a723e14a0ebc55cfca3",
                 "shasum": ""
             },
             "require": {
@@ -1961,7 +1961,7 @@
                 "asynchronous",
                 "event-loop"
             ],
-            "time": "2018-07-09T13:51:04+00:00"
+            "time": "2018-07-11T14:37:46+00:00"
         },
         {
             "name": "react/http-client",
@@ -2209,29 +2209,26 @@
         },
         {
             "name": "react/stream",
-            "version": "v0.7.5",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/stream.git",
-                "reference": "a41bbffdda5e3f4282012f8e346cef48ecb28b24"
+                "reference": "50426855f7a77ddf43b9266c22320df5bf6c6ce6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/stream/zipball/a41bbffdda5e3f4282012f8e346cef48ecb28b24",
-                "reference": "a41bbffdda5e3f4282012f8e346cef48ecb28b24",
+                "url": "https://api.github.com/repos/reactphp/stream/zipball/50426855f7a77ddf43b9266c22320df5bf6c6ce6",
+                "reference": "50426855f7a77ddf43b9266c22320df5bf6c6ce6",
                 "shasum": ""
             },
             "require": {
                 "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
                 "php": ">=5.3.8",
-                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3"
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5"
             },
             "require-dev": {
                 "clue/stream-filter": "~1.2",
                 "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
-            },
-            "suggest": {
-                "react/event-loop": "^0.4"
             },
             "type": "library",
             "autoload": {
@@ -2254,7 +2251,7 @@
                 "stream",
                 "writable"
             ],
-            "time": "2017-11-20T11:55:48+00:00"
+            "time": "2019-01-01T16:15:09+00:00"
         },
         {
             "name": "reactivex/rxphp",
