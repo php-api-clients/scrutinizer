@@ -338,21 +338,22 @@
         },
         {
             "name": "api-clients/middleware-json",
-            "version": "3.0.2",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/middleware-json.git",
-                "reference": "06ff9b18cb107856b5af77db4da27b9227d84ec1"
+                "reference": "b67b4ba93b3a2693c472b53c9c781bc96722e687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/middleware-json/zipball/06ff9b18cb107856b5af77db4da27b9227d84ec1",
-                "reference": "06ff9b18cb107856b5af77db4da27b9227d84ec1",
+                "url": "https://api.github.com/repos/php-api-clients/middleware-json/zipball/b67b4ba93b3a2693c472b53c9c781bc96722e687",
+                "reference": "b67b4ba93b3a2693c472b53c9c781bc96722e687",
                 "shasum": ""
             },
             "require": {
                 "api-clients/json": "^1.0",
                 "api-clients/middleware": "^4.0",
+                "api-clients/transport": "^3.1",
                 "clue/buzz-react": "^2.0 || ^1.4",
                 "php": "^7.0",
                 "psr/http-message": "^1.0",
@@ -378,7 +379,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-09-16T12:40:27+00:00"
+            "time": "2017-12-19T21:36:15+00:00"
         },
         {
             "name": "api-clients/middleware-user-agent",
@@ -5626,7 +5627,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
